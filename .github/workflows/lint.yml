@@ -1,3 +1,5 @@
+# .github/workflows/lint.yml
+
 name: Lint and Format Check
 
 on:
@@ -7,7 +9,7 @@ on:
     branches: [ main ]
 
 jobs:
-  lint_and_format:
+  lint-format:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,20 +19,28 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.1.0 # Use the same version as in package.json
+          version: 9 # Use the same version as in package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use the same version as specified in engines in package.json
+          node-version: '20' # Use the same version as specified in engines
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run ESLint
+      - name: Run ESLint check
         run: pnpm lint
 
-      - name: Run Prettier Check
+      - name: Run Prettier check
         run: pnpm prettier
+
+      # Optional: Add build check
+      # - name: Run build
+      #   run: pnpm build
+
+      # Optional: Add test run
+      # - name: Run tests
+      #   run: pnpm test
 
