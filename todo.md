@@ -14,5 +14,5 @@
 - [X] 020: Implement Gmail OAuth flow.
 - [X] 021: Implement real API connectors (Lunar, Bokio).
 - [~] 022: Test integrated solution thoroughly. (Skipped by user request)
-- [ ] 023: Setup Git and Netlify deployment.
+- [X] 023: Setup Git and Netlify deployment.
 
