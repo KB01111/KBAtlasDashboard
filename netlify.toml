@@ -1,0 +1,51 @@
+# netlify.toml
+
+# Base settings for all contexts
+[build]
+  # Directory containing the built assets (relative to base or repository root)
+  publish = ".next"
+  # Build command to run
+  command = "pnpm build"
+
+# Settings for the Next.js runtime
+[functions]
+  # Directory for Netlify functions (if any, not typically needed for Next.js on Netlify)
+  # directory = "netlify/functions"
+
+# Next.js runtime configuration
+[dev]
+  # Command to start the development server (optional, for `netlify dev`)
+  command = "pnpm dev"
+  # Port for the development server
+  port = 3000
+  # Directory to serve static files from (optional)
+  # publish = "public"
+
+# Plugin for Next.js on Netlify (Essential)
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Environment variables needed for the build and runtime
+# These should be set in the Netlify UI for security, not here.
+# Example:
+# [build.environment]
+#   OPENAI_API_KEY = "YOUR_OPENAI_API_KEY_HERE"
+#   GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID_HERE"
+#   GOOGLE_CLIENT_SECRET = "YOUR_GOOGLE_CLIENT_SECRET_HERE"
+#   NEXTAUTH_SECRET = "YOUR_NEXTAUTH_SECRET_KEY_HERE"
+#   NEXTAUTH_URL = "YOUR_PRODUCTION_URL_HERE"
+#   DATABASE_URL = "YOUR_PRODUCTION_DATABASE_URL_HERE" # e.g., from Neon, Supabase, etc.
+#   CREDENTIAL_ENCRYPTION_KEY = "YOUR_STRONG_SECRET_KEY_HERE"
+#   UNSTRUCTURED_SERVICE_URL = "YOUR_DEPLOYED_UNSTRUCTURED_SERVICE_URL_HERE"
+
+# Redirects and headers (optional)
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301
+
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     X-Frame-Options = "DENY"
+
