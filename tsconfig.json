@@ -18,6 +18,9 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "plugins": [
       {
@@ -28,3 +31,4 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mjs", "jest.config.js", ".next/types/**/*.ts", "eslint.config.mjs"],
   "exclude": ["node_modules"]
 }
+
