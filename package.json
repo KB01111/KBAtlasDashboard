@@ -55,7 +55,7 @@
     "@semantic-release/release-notes-generator": "^14.0.3",
     "@t3-oss/env-nextjs": "^0.13.4",
     "@vercel/otel": "^1.11.0",
-    "ai": "^4.3.13",
+    "ai": "^5.0.52",
     "chromadb": "^2.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
